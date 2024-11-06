@@ -15,6 +15,7 @@ const Upcoming = () => {
     const fetchUpcomingMovies = async () => {
       const response = await axios.get(`https://api.themoviedb.org/3/movie/upcoming?api_key=c45a857c193f6302f2b5061c3b85e743&language=en-US&page=${currentPage}`);
       dispatch(setUpcomingMovies(response.data.results));
+      console.log(response, "upcoming responseS")
     };
     fetchUpcomingMovies();
   }, [dispatch, currentPage]);
